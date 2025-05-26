@@ -15,6 +15,7 @@ export default function FormSplitBill({ friend, isVisible, setBalance }) {
 	}
 
 	function split(payer) {
+		if(!bill || !payer) return null;
 		if (payer === -1) {
 			const amount = bill - userBill;
 			setBalance(amount, friend.id);

@@ -25,7 +25,6 @@ const initialFriends = [
 ];
 
 export default function App() {
-	// const friendList = initialFriends;
 	const [friendList, setFriendList] = useState(initialFriends);
 	const [isOpen, setIsOpen] = useState(false);
 	const [selectedFriend, setSelected] = useState(null);
@@ -37,6 +36,7 @@ export default function App() {
 		const friend = friendList.find((friend) => friend.id === id);
 		setSelected(friend);
 		setVisible((prev) => (id !== prev ? id : null));
+		setIsOpen(false);
 	}
 	function handleSetBalance(balance, friendId) {
 		setFriendList((prev) =>
@@ -46,6 +46,7 @@ export default function App() {
 					: friend
 			)
 		);
+		// setSelected(null);
 	}
 	return (
 		<>
@@ -66,6 +67,7 @@ export default function App() {
 					friend={selectedFriend}
 					isVisible={isVisible}
 					setBalance={handleSetBalance}
+					key={selectedFriend.id}
 				/>
 			</div>
 		</>

@@ -14,7 +14,7 @@ export default function Friend({ friend, handleSelected, isVisible }) {
 					<p className="green">
 						{friend.name} owes you {friend.balance}
 					</p>
-				) : (
+				) : ( 
 					<p>You and {friend.name} are even</p>
 				)}
 				<Button handleClick={() => handleSelected(friend.id)}>
