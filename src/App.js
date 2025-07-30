@@ -50,25 +50,53 @@ export default function App() {
 	}
 	return (
 		<>
-			<div className="app">
-				<div className="sidebar">
-					<FriendsList
-						initialFriends={friendList}
-						handleSelected={handleSelected}
-						isVisible={isVisible}
-					/>
-					<FormAddFriend
-						isOpen={isOpen}
-						setIsOpen={() => setIsOpen((prev) => !prev)}
-						addFriend={handleAddFriends}
-					/>
+			<div className="main-con">
+				<div class="body">
+					<div className="app">
+						<div className="sidebar">
+							<FriendsList
+								initialFriends={friendList}
+								handleSelected={handleSelected}
+								isVisible={isVisible}
+							/>
+							<FormAddFriend
+								isOpen={isOpen}
+								setIsOpen={() => setIsOpen((prev) => !prev)}
+								addFriend={handleAddFriends}
+							/>
+						</div>
+						<FormSplitBill
+							friend={selectedFriend}
+							isVisible={isVisible}
+							setBalance={handleSetBalance}
+							key={selectedFriend?.id}
+						/>
+					</div>
 				</div>
-				<FormSplitBill
-					friend={selectedFriend}
-					isVisible={isVisible}
-					setBalance={handleSetBalance}
-					key={selectedFriend.id}
-				/>
+				<footer className="footer-ribbon">
+					<div className="social-icons">
+						<a
+							target="_blank"
+							rel="noreferrer"
+							href="https://www.github.com/devyalchemist">
+							<i class="fa-brands fa-github"></i>
+						</a>
+						<a
+							target="_blank"
+							rel="noreferrer"
+							href="https://www.x.com/devyalchemist">
+							<i class="fa-brands fa-x-twitter"></i>
+						</a>
+
+						<a
+							target="_blank"
+							rel="noreferrer"
+							href="https://instagram.com/gospel_uo">
+							<i class="fa-brands fa-instagram"></i>
+						</a>
+					</div>
+					<h2>@devyalchemist</h2>
+				</footer>
 			</div>
 		</>
 	);

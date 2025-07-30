@@ -20,12 +20,35 @@ html {
 body {
 	height: 100vh;
 	color: #495057;
+
+	/* background-color: black; */
+}
+.body {
+	color: #495057;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	/* background-color: black; */
 }
-
+.main-con {
+	display: grid;
+	grid-template-columns: 1fr;
+	height: 100dvh;
+	grid-template-rows: 1fr 50px;
+	width: 100%;
+}
+.footer-ribbon {
+	background-color: var(--color-dark);
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px 25px;
+}
+.fa-brands {
+	font-size: 1.6rem;
+	color: #495057;
+}
 .app {
 	min-height: 66vh;
 	display: grid;
@@ -133,7 +156,42 @@ form {
 	grid-template-columns: 1fr 12rem;
 	padding: 3.2rem 4rem;
 }
-
+.social-icons {
+	width: 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+@media (max-width: 400px) {
+	.app {
+		display: flex;
+		gap: 1rem;
+		flex-direction: column;
+	}
+	.form-split-bill {
+		padding: 1.5rem;
+		margin-bottom: 2rem;
+	}
+	.sidebar ul {
+		flex: 1;
+	}
+	.form-add-friend {
+		flex: 1;
+	}
+	.body {
+		padding-top: 20px;
+		align-items: start;
+		overflow-y: scroll;
+		scrollbar-width: none; /* Firefox */
+		-ms-overflow-style: none;
+	}
+	.body::-webkit-scrollbar {
+		display: none;
+	}
+	.sidebar {
+		padding-bottom: 2rem;
+	}
+}
 label {
 	font-weight: 500;
 }

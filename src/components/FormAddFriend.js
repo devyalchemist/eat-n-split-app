@@ -9,7 +9,7 @@ export default function FormAddFriend({ isOpen, setIsOpen, addFriend }) {
 		e.preventDefault();
 	}
 	function handleAdd() {
-		setIsOpen();
+		setIsOpen();	
 	}
 	function add() {
 		const newFriend = {
@@ -33,12 +33,7 @@ export default function FormAddFriend({ isOpen, setIsOpen, addFriend }) {
 					onChange={(e) => setFriendName(e.target.value)}
 				/>
 				<label>🖼️ Image URL</label>
-				<input
-					type="text"
-					value={image}
-					onChange={(e) => setImage(e.target.value)}
-					readOnly
-				/>
+				<input type="text" value={image} readOnly />
 				<Button handleClick={add}>Add</Button>
 			</form>
 			<Button handleClick={handleAdd}>Close</Button>
